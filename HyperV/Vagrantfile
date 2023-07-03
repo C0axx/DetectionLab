@@ -57,7 +57,7 @@ Vagrant.configure("2") do |config|
         privileged: "true",
         powershell_elevated_interactive: "true",
         path: "./hyperv-set-switch.ps1", 
-        args: "-vmname dc.windomain.local"
+        args: "-vmname dc.pirate.ship"
       }
     end
     
@@ -68,7 +68,7 @@ Vagrant.configure("2") do |config|
         privileged: "true",
         powershell_elevated_interactive: "true",
         path: "./hyperv-remove-networkadapter.ps1", 
-        args: "-vmname dc.windomain.local"
+        args: "-vmname dc.pirate.ship"
       }
     end
 
@@ -96,7 +96,7 @@ Vagrant.configure("2") do |config|
     cfg.vm.provision "shell", inline: 'cscript c:\windows\system32\slmgr.vbs /dlv', privileged: true
 
     cfg.vm.provider "hyperv" do |h, override|
-      h.vmname = "dc.windomain.local"
+      h.vmname = "dc.pirate.ship"
       h.memory = 4096
       h.cpus = 2
       h.ip_address_timeout = 600
@@ -119,7 +119,7 @@ Vagrant.configure("2") do |config|
         privileged: "true",
         powershell_elevated_interactive: "true",
         path: "./hyperv-set-switch.ps1", 
-        args: "-vmname wef.windomain.local"
+        args: "-vmname wef.pirate.ship"
       }
     end
     
@@ -130,7 +130,7 @@ Vagrant.configure("2") do |config|
         privileged: "true",
         powershell_elevated_interactive: "true",
         path: "./hyperv-remove-networkadapter.ps1", 
-        args: "-vmname wef.windomain.local"
+        args: "-vmname wef.pirate.ship"
       }
     end
 
@@ -157,7 +157,7 @@ Vagrant.configure("2") do |config|
     cfg.vm.provision "shell", inline: 'cscript c:\windows\system32\slmgr.vbs /dlv', privileged: true
 
     cfg.vm.provider "hyperv" do |h, override|
-      h.vmname = "wef.windomain.local"
+      h.vmname = "wef.pirate.ship"
       h.memory = 4096
       h.cpus = 2
       h.ip_address_timeout = 600
@@ -180,7 +180,7 @@ Vagrant.configure("2") do |config|
         privileged: "true",
         powershell_elevated_interactive: "true",
         path: "./hyperv-set-switch.ps1", 
-        args: "-vmname win10.windomain.local"
+        args: "-vmname win10.pirate.ship"
       }
     end
     
@@ -191,7 +191,7 @@ Vagrant.configure("2") do |config|
         privileged: "true",
         powershell_elevated_interactive: "true",
         path: "./hyperv-remove-networkadapter.ps1", 
-        args: "-vmname win10.windomain.local"
+        args: "-vmname win10.pirate.ship"
       }
     end
 
@@ -213,7 +213,7 @@ Vagrant.configure("2") do |config|
     cfg.vm.provision "shell", inline: 'cscript c:\windows\system32\slmgr.vbs /dlv', privileged: true
 
     cfg.vm.provider "hyperv" do |h, override|
-      h.vmname = "win10.windomain.local"
+      h.vmname = "win10.pirate.ship"
       h.memory = 4096
       h.cpus = 2
       h.ip_address_timeout = 600

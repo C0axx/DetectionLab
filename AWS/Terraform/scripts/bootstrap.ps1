@@ -2,12 +2,12 @@
 
 # Hardcode IP addresses in the HOSTS file
 If ($env:COMPUTERNAME -eq "DC") {
-  Add-Content 'c:\\windows\\system32\\drivers\\etc\\hosts' '        192.168.56.103    wef.windomain.local'
-  Add-Content 'c:\\windows\\system32\\drivers\\etc\\hosts' '        192.168.56.104    win10.windomain.local'
+  Add-Content 'c:\\windows\\system32\\drivers\\etc\\hosts' '        192.168.56.103    wef.pirate.ship'
+  Add-Content 'c:\\windows\\system32\\drivers\\etc\\hosts' '        192.168.56.104    win10.pirate.ship'
 }
 Else {
-  Add-Content 'c:\\windows\\system32\\drivers\\etc\\hosts' '        192.168.56.102    dc.windomain.local'
-  Add-Content 'c:\\windows\\system32\\drivers\\etc\\hosts' '        192.168.56.102    windomain.local'
+  Add-Content 'c:\\windows\\system32\\drivers\\etc\\hosts' '        192.168.56.102    dc.pirate.ship'
+  Add-Content 'c:\\windows\\system32\\drivers\\etc\\hosts' '        192.168.56.102    pirate.ship'
 }
 
 # Keep renewing the IP address until the domain controller is set as a DNS server

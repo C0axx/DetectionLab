@@ -8,7 +8,7 @@
 #    This allows you to verify that each step in the installation process was successful
 # 5. Once installation is successful, reboot once more. 
 
-$username = 'windomain.local\administrator'
+$username = 'pirate.ship\administrator'
 $password = 'vagrant'
 $securePassword = ConvertTo-SecureString $password -AsPlainText -Force
 $credential = New-Object System.Management.Automation.PSCredential $username, $securePassword

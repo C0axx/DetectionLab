@@ -1,6 +1,6 @@
 # Purpose: Downloads and installs Microsoft Exchange
 
-$username = 'windomain.local\administrator'
+$username = 'pirate.ship\administrator'
 $password = 'vagrant'
 $securePassword = ConvertTo-SecureString $password -AsPlainText -Force
 $credential = New-Object System.Management.Automation.PSCredential $username, $securePassword

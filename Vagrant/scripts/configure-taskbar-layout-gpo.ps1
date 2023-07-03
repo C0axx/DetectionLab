@@ -5,7 +5,7 @@ Import-GPO -BackupGpoName 'Taskbar Layout' -Path "c:\vagrant\resources\GPO\taskb
 Write-Host "$('[{0:HH:mm}]' -f (Get-Date)) Copying layout file to SYSVOL..."
 Copy-Item "c:\vagrant\resources\GPO\taskbar_layout\DetectionLabLayout.xml" "c:\Windows\SYSVOL\domain\scripts\DetectionLabLayout.xml"
 
-$OU = "ou=Domain Controllers,dc=windomain,dc=local"
+$OU = "ou=Domain Controllers,DC=pirate,DC=ship"
 $gPLinks = $null
 $gPLinks = Get-ADOrganizationalUnit -Identity $OU -Properties name, distinguishedName, gPLink, gPOptions
 $GPO = Get-GPO -Name 'Taskbar Layout'
@@ -15,7 +15,7 @@ If ($gPLinks.LinkedGroupPolicyObjects -notcontains $gpo.path) {
     Write-Host "$('[{0:HH:mm}]' -f (Get-Date)) Taskbar Layout GPO was already linked at $OU. Moving On."
 }
 
-$OU = "ou=Workstations,dc=windomain,dc=local"
+$OU = "ou=Workstations,DC=pirate,DC=ship"
 $gPLinks = $null
 $gPLinks = Get-ADOrganizationalUnit -Identity $OU -Properties name, distinguishedName, gPLink, gPOptions
 $GPO = Get-GPO -Name 'Taskbar Layout'
@@ -25,7 +25,7 @@ If ($gPLinks.LinkedGroupPolicyObjects -notcontains $gpo.path) {
     Write-Host "$('[{0:HH:mm}]' -f (Get-Date)) Taskbar Layout GPO was already linked at $OU. Moving On."
 }
 
-$OU = "ou=Servers,dc=windomain,dc=local"
+$OU = "ou=Servers,DC=pirate,DC=ship"
 $gPLinks = $null
 $gPLinks = Get-ADOrganizationalUnit -Identity $OU -Properties name, distinguishedName, gPLink, gPOptions
 $GPO = Get-GPO -Name 'Taskbar Layout'

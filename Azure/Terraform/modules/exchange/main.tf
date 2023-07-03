@@ -9,7 +9,7 @@ provider "azurerm" {
 }
 
 resource "azurerm_virtual_machine" "exchange" {
-  name = "exchange.windomain.local"
+  name = "exchange.pirate.ship"
   location = var.region
   resource_group_name  = var.resource_group_name
   network_interface_ids = [azurerm_network_interface.exchange-nic.id]

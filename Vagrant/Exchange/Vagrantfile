@@ -30,7 +30,7 @@ Vagrant.configure("2") do |config|
     cfg.vm.provision "shell", inline: 'cscript c:\windows\system32\slmgr.vbs /dlv', privileged: false
 
     cfg.vm.provider "vmware_desktop" do |v, override|
-      v.vmx["displayname"] = "exchange.windomain.local"
+      v.vmx["displayname"] = "exchange.pirate.ship"
       v.memory = 8192
       v.cpus = 4
       v.gui = true
@@ -39,7 +39,7 @@ Vagrant.configure("2") do |config|
 
     cfg.vm.provider "virtualbox" do |vb, override|
       vb.gui = true
-      vb.name = "exchange.windomain.local"
+      vb.name = "exchange.pirate.ship"
       vb.default_nic_type = "82545EM"
       vb.customize ["modifyvm", :id, "--memory", 8192]
       vb.customize ["modifyvm", :id, "--cpus", 4]

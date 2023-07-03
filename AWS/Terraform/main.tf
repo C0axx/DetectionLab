@@ -34,7 +34,7 @@ resource "aws_subnet" "default" {
 
 # Adjust VPC DNS settings to not conflict with lab
 resource "aws_vpc_dhcp_options" "default" {
-  domain_name          = "windomain.local"
+  domain_name          = "pirate.ship"
   domain_name_servers  = concat(["192.168.56.102"], var.external_dns_servers)
   netbios_name_servers = ["192.168.56.102"]
 }
@@ -238,7 +238,7 @@ resource "aws_instance" "dc" {
   # Uses the local variable if external data source resolution fails
   ami = coalesce(var.dc_ami, element(concat(data.aws_ami.dc_ami.*.image_id, [""]), 0))
 
-  tags = tomap({ "Name" = "${var.instance_name_prefix}dc.windomain.local" })
+  tags = tomap({ "Name" = "${var.instance_name_prefix}dc.pirate.ship" })
 
   subnet_id              = aws_subnet.default.id
   vpc_security_group_ids = [aws_security_group.windows.id]
@@ -282,7 +282,7 @@ resource "aws_instance" "wef" {
   # Uses the local variable if external data source resolution fails
   ami = coalesce(var.wef_ami, element(concat(data.aws_ami.wef_ami.*.image_id, [""]), 0))
 
-  tags = tomap({ "Name" = "${var.instance_name_prefix}wef.windomain.local" })
+  tags = tomap({ "Name" = "${var.instance_name_prefix}wef.pirate.ship" })
 
   subnet_id              = aws_subnet.default.id
   vpc_security_group_ids = [aws_security_group.windows.id]
@@ -326,7 +326,7 @@ resource "aws_instance" "win10" {
   # Uses the local variable if external data source resolution fails
   ami = coalesce(var.win10_ami, element(concat(data.aws_ami.win10_ami.*.image_id, [""]), 0))
 
-  tags = tomap({ "Name" = "${var.instance_name_prefix}win10.windomain.local" })
+  tags = tomap({ "Name" = "${var.instance_name_prefix}win10.pirate.ship" })
 
   subnet_id              = aws_subnet.default.id
   vpc_security_group_ids = [aws_security_group.windows.id]

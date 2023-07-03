@@ -95,11 +95,11 @@ if which vmrun; then
     tmux send-keys -t "$sn:5" 'ovftool /opt/DetectionLab/Vagrant/Exchange/.vagrant/machines/exchange/vmware_desktop/*/exchange.vmx /root/exchange.ova && echo -n "success" > /root/exchange.export || echo "failed" > /root/exchange.export' Enter
   fi
 else
-  tmux send-keys -t "$sn:2" 'vboxmanage export dc.windomain.local -o /root/dc.ova && echo -n "success" > /root/dc.export || echo "failed" > /root/dc.export' Enter
-  tmux send-keys -t "$sn:3" 'vboxmanage export wef.windomain.local -o /root/wef.ova && echo -n "success" > /root/wef.export || echo "failed" > /root/wef.export' Enter
-  tmux send-keys -t "$sn:4" 'vboxmanage export win10.windomain.local -o /root/win10.ova && echo -n "success" > /root/win10.export || echo "failed" > /root/win10.export' Enter
+  tmux send-keys -t "$sn:2" 'vboxmanage export dc.pirate.ship -o /root/dc.ova && echo -n "success" > /root/dc.export || echo "failed" > /root/dc.export' Enter
+  tmux send-keys -t "$sn:3" 'vboxmanage export wef.pirate.ship -o /root/wef.ova && echo -n "success" > /root/wef.export || echo "failed" > /root/wef.export' Enter
+  tmux send-keys -t "$sn:4" 'vboxmanage export win10.pirate.ship -o /root/win10.ova && echo -n "success" > /root/win10.export || echo "failed" > /root/win10.export' Enter
   if [ "$EXCHANGE_EXISTS" -eq 1 ]; then
-    tmux send-keys -t "$sn:5" 'vboxmanage export exchange.windomain.local -o /root/exchange.ova && echo -n "success" > /root/exchange.export || echo "failed" > /root/exchange.export' Enter
+    tmux send-keys -t "$sn:5" 'vboxmanage export exchange.pirate.ship -o /root/exchange.ova && echo -n "success" > /root/exchange.export || echo "failed" > /root/exchange.export' Enter
   fi
 fi
 

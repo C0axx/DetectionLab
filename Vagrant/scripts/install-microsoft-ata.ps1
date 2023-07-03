@@ -84,12 +84,12 @@ If (-not (Test-Path "C:\Program Files\Microsoft Advanced Threat Analytics\Center
 
 Start-Sleep -Seconds 60
 
-Invoke-Command -computername dc -Credential (new-object pscredential("windomain\vagrant", (ConvertTo-SecureString -AsPlainText -Force -String "vagrant"))) -ScriptBlock {
+Invoke-Command -computername dc -Credential (new-object pscredential("PIRATESHIP\vagrant", (ConvertTo-SecureString -AsPlainText -Force -String "vagrant"))) -ScriptBlock {
 
     Write-Host "$('[{0:HH:mm}]' -f (Get-Date)) [$env:computername] Installing the ATA Lightweight gateway on DC..."
 
-    Write-Host "$('[{0:HH:mm}]' -f (Get-Date)) [$env:computername] Adding wef.windomain.local to hosts file..."
-    Add-Content 'c:\\windows\\system32\\drivers\\etc\\hosts' '        192.168.56.103    wef.windomain.local'
+    Write-Host "$('[{0:HH:mm}]' -f (Get-Date)) [$env:computername] Adding wef.pirate.ship to hosts file..."
+    Add-Content 'c:\\windows\\system32\\drivers\\etc\\hosts' '        192.168.56.103    wef.pirate.ship'
 
     # Enable web requests to endpoints with invalid SSL certs (like self-signed certs)
     If (-not("SSLValidator" -as [type])) {

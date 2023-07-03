@@ -1,4 +1,4 @@
-# Purpose: Joins a Windows host to the windomain.local domain which was created with "create-domain.ps1".
+# Purpose: Joins a Windows host to the pirate.ship domain which was created with "create-domain.ps1".
 # Source: https://github.com/StefanScherer/adfs2
 
 $hostsFile = "c:\Windows\System32\drivers\etc\hosts"
@@ -14,7 +14,7 @@ $adapters | ForEach-Object {if (!($_.Description).Contains("Hyper-V")) {$_.SetDN
 
 Write-Host "$('[{0:HH:mm}]' -f (Get-Date)) Now join the domain..."
 $hostname = $(hostname)
-$user = "windomain.local\vagrant"
+$user = "pirate.ship\vagrant"
 $pass = ConvertTo-SecureString "vagrant" -AsPlainText -Force
 $DomainCred = New-Object System.Management.Automation.PSCredential $user, $pass
 
@@ -25,7 +25,7 @@ If (($hostname -eq "wef") -or ($hostname -eq "exchange")) {
   While ($tries -lt 3) {
     Try {
       $tries += 1
-      Add-Computer -DomainName "windomain.local" -credential $DomainCred -OUPath "ou=Servers,dc=windomain,dc=local" -PassThru -ErrorAction Stop
+      Add-Computer -DomainName "pirate.ship" -credential $DomainCred -OUPath "ou=Servers,DC=pirate,DC=ship" -PassThru -ErrorAction Stop
       Break
     } Catch {
       $tries += 1
@@ -45,11 +45,11 @@ If (($hostname -eq "wef") -or ($hostname -eq "exchange")) {
     Try {
       $tries += 1
       Write-Host "$('[{0:HH:mm}]' -f (Get-Date)) Try # $tries"
-      Add-Computer -DomainName "windomain.local" -credential $DomainCred -OUPath "ou=Workstations,dc=windomain,dc=local"
+      Add-Computer -DomainName "pirate.ship" -credential $DomainCred -OUPath "ou=Workstations,DC=pirate,DC=ship"
       Break
     } Catch {
       $tries += 1
-      ping -c 1 windomain.local
+      ping -c 1 pirate.ship
       ipconfig /all
       Write-Host $_.Exception.Message
       Write-Host "$('[{0:HH:mm}]' -f (Get-Date)) Sleeping 10s before trying again..."
@@ -57,7 +57,7 @@ If (($hostname -eq "wef") -or ($hostname -eq "exchange")) {
     }
   }
 } Else {
-  Add-Computer -DomainName "windomain.local" -credential $DomainCred -PassThru
+  Add-Computer -DomainName "pirate.ship" -credential $DomainCred -PassThru
 }
 
 # Stop Windows Update

@@ -1,7 +1,7 @@
 # Purpose: Installs the GPOs for the custom WinEventLog auditing policy.
 Write-Host "$('[{0:HH:mm}]' -f (Get-Date)) Configuring auditing policy GPOs..."
 $GPOName = 'Domain Controllers Enhanced Auditing Policy'
-$OU = "ou=Domain Controllers,dc=windomain,dc=local"
+$OU = "ou=Domain Controllers,DC=pirate,DC=ship"
 Write-Host "$('[{0:HH:mm}]' -f (Get-Date)) Importing $GPOName..."
 Import-GPO -BackupGpoName $GPOName -Path "c:\vagrant\resources\GPO\Domain_Controllers_Enhanced_Auditing_Policy" -TargetName $GPOName -CreateIfNeeded
 $gpLinks = $null
@@ -16,7 +16,7 @@ else
     Write-Host "$('[{0:HH:mm}]' -f (Get-Date)) GpLink $GPOName already linked on $OU. Moving On."
 }
 $GPOName = 'Servers Enhanced Auditing Policy'
-$OU = "ou=Servers,dc=windomain,dc=local"
+$OU = "ou=Servers,DC=pirate,DC=ship"
 Write-Host "$('[{0:HH:mm}]' -f (Get-Date)) Importing $GPOName..."
 Import-GPO -BackupGpoName $GPOName -Path "c:\vagrant\resources\GPO\Servers_Enhanced_Auditing_Policy" -TargetName $GPOName -CreateIfNeeded
 $gpLinks = $null
@@ -32,7 +32,7 @@ else
 }
 
 $GPOName = 'Workstations Enhanced Auditing Policy'
-$OU = "ou=Workstations,dc=windomain,dc=local"
+$OU = "ou=Workstations,DC=pirate,DC=ship"
 Write-Host "$('[{0:HH:mm}]' -f (Get-Date)) Importing $GPOName..."
 Import-GPO -BackupGpoName $GPOName -Path "c:\vagrant\resources\GPO\Workstations_Enhanced_Auditing_Policy" -TargetName $GPOName -CreateIfNeeded
 $gpLinks = $null

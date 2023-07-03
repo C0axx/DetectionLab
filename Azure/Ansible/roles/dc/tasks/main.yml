@@ -64,7 +64,7 @@
   vars:
     ansible_become: yes
     ansible_become_method: runas
-    ansible_become_user: windomain.local\vagrant
+    ansible_become_user: pirate.ship\vagrant
     ansible_become_password: vagrant
     ansible_become_flags: logon_type=new_credentials logon_flags=netcredentials_only
   failed_when: "'Exception' in ou_creation.stderr"
@@ -80,7 +80,7 @@
   vars:
     ansible_become: yes
     ansible_become_method: runas
-    ansible_become_user: windomain.local\vagrant
+    ansible_become_user: pirate.ship\vagrant
     ansible_become_password: vagrant
     ansible_become_flags: logon_type=new_credentials logon_flags=netcredentials_only
   failed_when: "'Exception' in wef_gpo.stderr"
@@ -97,7 +97,7 @@
   vars:
     ansible_become: yes
     ansible_become_method: runas
-    ansible_become_user: windomain.local\vagrant
+    ansible_become_user: pirate.ship\vagrant
     ansible_become_password: vagrant
     ansible_become_flags: logon_type=new_credentials logon_flags=netcredentials_only
   failed_when: "'Exception' in powershell_gpo.stderr"
@@ -114,7 +114,7 @@
   vars:
     ansible_become: yes
     ansible_become_method: runas
-    ansible_become_user: windomain.local\vagrant
+    ansible_become_user: pirate.ship\vagrant
     ansible_become_password: vagrant
     ansible_become_flags: logon_type=new_credentials logon_flags=netcredentials_only
   failed_when: "'Exception' in audit_policy.stderr"
@@ -131,7 +131,7 @@
   vars:
     ansible_become: yes
     ansible_become_method: runas
-    ansible_become_user: windomain.local\vagrant
+    ansible_become_user: pirate.ship\vagrant
     ansible_become_password: vagrant
     ansible_become_flags: logon_type=new_credentials logon_flags=netcredentials_only
   failed_when: "'Exception' in disable_win_def.stderr"
@@ -147,7 +147,7 @@
   vars:
     ansible_become: yes
     ansible_become_method: runas
-    ansible_become_user: windomain.local\vagrant
+    ansible_become_user: pirate.ship\vagrant
     ansible_become_password: vagrant
     ansible_become_flags: logon_type=new_credentials logon_flags=netcredentials_only
   failed_when: "'Exception' in rdp_gpo.stderr"
@@ -164,7 +164,7 @@
   vars:
     ansible_become: yes
     ansible_become_method: runas
-    ansible_become_user: windomain.local\vagrant
+    ansible_become_user: pirate.ship\vagrant
     ansible_become_password: vagrant
     ansible_become_flags: logon_type=new_credentials logon_flags=netcredentials_only
   failed_when: "'Exception' in taskbar_gpo.stderr"

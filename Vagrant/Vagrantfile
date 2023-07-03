@@ -83,7 +83,7 @@ Vagrant.configure("2") do |config|
     cfg.vm.provision "shell", inline: "Write-Host 'DC Provisioning Complete!'", privileged: false
 
     cfg.vm.provider "vmware_desktop" do |v, override|
-      v.vmx["displayname"] = "dc.windomain.local"
+      v.vmx["displayname"] = "dc.pirate.ship"
       v.memory = 3072
       v.cpus = 2
       v.gui = true
@@ -91,7 +91,7 @@ Vagrant.configure("2") do |config|
 
     cfg.vm.provider "virtualbox" do |vb, override|
       vb.gui = true
-      vb.name = "dc.windomain.local"
+      vb.name = "dc.pirate.ship"
       vb.default_nic_type = "82545EM"
       vb.customize ["modifyvm", :id, "--memory", 3072]
       vb.customize ["modifyvm", :id, "--cpus", 2]
@@ -149,7 +149,7 @@ Vagrant.configure("2") do |config|
     cfg.vm.provision "shell", inline: "Write-Host 'WEF Provisioning Complete!'", privileged: false
 
     cfg.vm.provider "vmware_desktop" do |v, override|
-      v.vmx["displayname"] = "wef.windomain.local"
+      v.vmx["displayname"] = "wef.pirate.ship"
       v.memory = 2048
       v.cpus = 2
       v.gui = true
@@ -157,7 +157,7 @@ Vagrant.configure("2") do |config|
 
     cfg.vm.provider "virtualbox" do |vb, override|
       vb.gui = true
-      vb.name = "wef.windomain.local"
+      vb.name = "wef.pirate.ship"
       vb.default_nic_type = "82545EM"
       vb.customize ["modifyvm", :id, "--memory", 2048]
       vb.customize ["modifyvm", :id, "--cpus", 2]
@@ -207,7 +207,7 @@ Vagrant.configure("2") do |config|
     cfg.vm.provision "shell", inline: "Write-Host 'Win10 Provisioning Complete!'", privileged: false
 
     cfg.vm.provider "vmware_desktop" do |v, override|
-      v.vmx["displayname"] = "win10.windomain.local"
+      v.vmx["displayname"] = "win10.pirate.ship"
       v.vmx["gui.fullscreenatpoweron"] = "FALSE"
       v.vmx["gui.viewModeAtPowerOn"] = "windowed"
       v.memory = 3072
@@ -217,7 +217,7 @@ Vagrant.configure("2") do |config|
 
     cfg.vm.provider "virtualbox" do |vb, override|
       vb.gui = true
-      vb.name = "win10.windomain.local"
+      vb.name = "win10.pirate.ship"
       vb.default_nic_type = "82545EM"
       vb.customize ["modifyvm", :id, "--memory", 3072]
       vb.customize ["modifyvm", :id, "--cpus", 2]

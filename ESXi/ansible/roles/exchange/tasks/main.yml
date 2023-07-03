@@ -90,7 +90,7 @@
   vars:
     ansible_become: yes
     ansible_become_method: runas
-    ansible_become_user: WINDOMAIN.local\Administrator
+    ansible_become_user: pirate.ship\Administrator
     ansible_become_password: vagrant
   register: prepare_schema
 
@@ -105,7 +105,7 @@
   vars:
     ansible_become: yes
     ansible_become_method: runas
-    ansible_become_user: WINDOMAIN.local\Administrator
+    ansible_become_user: pirate.ship\Administrator
     ansible_become_password: vagrant
   register: prepare_ad
 
@@ -120,7 +120,7 @@
   vars:
     ansible_become: yes
     ansible_become_method: runas
-    ansible_become_user: WINDOMAIN.local\Administrator
+    ansible_become_user: pirate.ship\Administrator
     ansible_become_password: vagrant
   register: install_exchange
 

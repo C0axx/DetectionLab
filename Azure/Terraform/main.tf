@@ -389,7 +389,7 @@ resource "azurerm_public_ip" "win10-publicip" {
 }
 
 resource "azurerm_virtual_machine" "dc" {
-  name = "dc.windomain.local"
+  name = "dc.pirate.ship"
   location = var.region
   resource_group_name   = azurerm_resource_group.detectionlab.name
   network_interface_ids = [azurerm_network_interface.dc-nic.id]
@@ -467,7 +467,7 @@ PROTECTED_SETTINGS
 */
 
 resource "azurerm_virtual_machine" "wef" {
-  name = "wef.windomain.local"
+  name = "wef.pirate.ship"
   location = var.region
   resource_group_name  = azurerm_resource_group.detectionlab.name
   network_interface_ids = [azurerm_network_interface.wef-nic.id]
@@ -547,7 +547,7 @@ PROTECTED_SETTINGS
 */
 
 resource "azurerm_virtual_machine" "win10" {
-  name = "win10.windomain.local"
+  name = "win10.pirate.ship"
   location = var.region
   resource_group_name  = azurerm_resource_group.detectionlab.name
   network_interface_ids = [azurerm_network_interface.win10-nic.id]
